@@ -1,0 +1,19 @@
+project/
+├── src/
+│   ├── assets/
+│   │   ├── images/
+│   │   │   └── logo.png
+│   ├── components/
+│   │   ├── Sidebar/
+│   │   │   ├── Sidebar.js
+│   │   │   └── Sidebar.css
+│   │   ├── ChatInput/
+│   │   │   ├── ChatInput.js
+│   │   │   └── ChatInput.css
+│   │   └── SuggestedQuestions/
+│   │       ├── SuggestedQuestions.js
+│   │       └── SuggestedQuestions.css
+│   ├── styles/
+│   │   └── global.css
+│   └── index.html
+└── package.json

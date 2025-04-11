@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Assistant Chat</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="components/Sidebar/Sidebar.css">
+    <link rel="stylesheet" href="components/ChatInput/ChatInput.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="logo-container">
+                <button class="menu-toggle">
+                    ☰
+                </button>
+            </div>
+            <button class="new-chat-btn">
+                <span>+ New Chat</span>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="#" class="nav-item">
+                        <span class="icon">📜</span>
+                        <span>History</span>
+                    </a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="welcome-section">
+                <h1>Welcome to AI Assistant</h1>
+                <h2>Ready to help with your questions</h2>
+            </div>
+
+            <div class="chat-messages" id="chatMessages">
+                <!-- Messages will be inserted here dynamically -->
+            </div>
+
+            <div class="chat-input-container">
+                <input type="text" id="chatInput" placeholder="Enter the prompt">
+                <button class="send-btn">➤</button>
+            </div>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="components/Sidebar/Sidebar.js"></script>
+    <script src="components/ChatInput/ChatInput.js"></script>
+</body>
+</html>
+
+

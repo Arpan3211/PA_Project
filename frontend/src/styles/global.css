@@ -1,0 +1,138 @@
+:root {
+    --primary-color: #2D7FF9;
+    --background-color: #F0F7FF;
+    --text-color: #333;
+    --sidebar-width: 250px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--background-color);
+}
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+    padding: 2rem;
+    margin-left: var(--sidebar-width);
+}
+
+.welcome-section {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.welcome-section h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.welcome-section .highlight {
+    color: var(--primary-color);
+}
+
+.welcome-section h2 {
+    font-size: 2rem;
+    color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 0;
+    }
+    
+    .sidebar {
+        position: fixed;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+    
+    .sidebar.active {
+        transform: translateX(0);
+    }
+}
+
+.chat-messages {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.message {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    animation: fadeIn 0.3s ease;
+}
+
+.message.user {
+    background: transparent;
+}
+
+.message.assistant {
+    background: #f7f7f8;
+}
+
+.message-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.message.user .message-avatar {
+    background: var(--primary-color);
+    color: white;
+}
+
+.message.assistant .message-avatar {
+    background: #10a37f;
+    color: white;
+}
+
+.message-content {
+    flex: 1;
+    line-height: 1.5;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Adjust main content for chat layout */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.chat-messages {
+    flex: 1;
+    height: calc(100vh - 200px);
+}
+
+.chat-input-container {
+    margin-top: auto;
+    padding: 1rem;
+}
+
+.welcome-section {
+    padding: 2rem;
+}

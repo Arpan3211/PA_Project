@@ -1,0 +1,33 @@
+.chat-input-container {
+    position: relative;
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+#chatInput {
+    width: 100%;
+    padding: 1rem 3rem 1rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    font-size: 1rem;
+    background: white;
+}
+
+.voice-btn, .send-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.voice-btn {
+    right: 3rem;
+}
+
+.send-btn {
+    right: 1rem;
+    color: var(--primary-color);
+}
