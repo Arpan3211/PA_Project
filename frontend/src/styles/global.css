@@ -23,40 +23,48 @@ body {
 
 .main-content {
     flex: 1;
-    padding: 2rem;
+    padding: 1rem;
     margin-left: var(--sidebar-width);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .welcome-section {
     text-align: center;
     margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    padding: 2rem;
 }
 
 .welcome-section h1 {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
-}
-
-.welcome-section .highlight {
     color: var(--primary-color);
 }
 
 .welcome-section h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: var(--text-color);
+    margin-bottom: 1rem;
 }
 
 @media (max-width: 768px) {
     .main-content {
         margin-left: 0;
     }
-    
+
     .sidebar {
         position: fixed;
         transform: translateX(-100%);
         transition: transform 0.3s ease;
     }
-    
+
     .sidebar.active {
         transform: translateX(0);
     }
@@ -64,12 +72,15 @@ body {
 
 .chat-messages {
     max-width: 800px;
+    width: 100%;
     margin: 0 auto;
     padding: 1rem;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    flex: 1;
+    height: calc(100vh - 120px);
 }
 
 .message {
@@ -116,21 +127,14 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Adjust main content for chat layout */
-.main-content {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-}
-
-.chat-messages {
-    flex: 1;
-    height: calc(100vh - 200px);
-}
-
 .chat-input-container {
     margin-top: auto;
     padding: 1rem;
+    position: sticky;
+    bottom: 0;
+    background-color: var(--background-color);
+    z-index: 10;
+    border-top: 1px solid #eee;
 }
 
 .welcome-section {

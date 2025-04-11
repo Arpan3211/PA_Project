@@ -1,16 +1,35 @@
 .chat-input-container {
     position: relative;
     max-width: 800px;
-    margin: 2rem auto;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.chat-input-container form {
+    display: flex;
+    align-items: center;
+    position: relative;
 }
 
 #chatInput {
     width: 100%;
-    padding: 1rem 3rem 1rem 1rem;
+    padding: 0.75rem 3rem 0.75rem 1rem;
     border: 1px solid #ddd;
     border-radius: 25px;
     font-size: 1rem;
     background: white;
+    resize: none;
+    overflow-y: auto;
+    max-height: 150px;
+    min-height: 56px;
+    line-height: 1.5;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+#chatInput:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(45, 127, 249, 0.1);
 }
 
 .voice-btn, .send-btn {
@@ -21,6 +40,7 @@
     border: none;
     cursor: pointer;
     padding: 0.5rem;
+    transition: opacity 0.2s ease;
 }
 
 .voice-btn {
@@ -30,4 +50,13 @@
 .send-btn {
     right: 1rem;
     color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.send-btn:hover {
+    opacity: 0.8;
+}
+
+.send-btn:active {
+    transform: translateY(-50%) scale(0.95);
 }

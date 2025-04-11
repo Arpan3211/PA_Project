@@ -8,6 +8,10 @@
     top: 0;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, width 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    overflow-y: auto;
 }
 
 .sidebar.collapsed {
@@ -76,6 +80,73 @@
     margin-right: 0.5rem;
 }
 
+/* Conversation list styles */
+#conversationList {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.conversation-item {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.conversation-item:hover {
+    background-color: var(--background-color);
+}
+
+.conversation-item.active {
+    background-color: rgba(45, 127, 249, 0.1);
+    font-weight: 500;
+}
+
+.conversation-icon {
+    margin-right: 0.75rem;
+}
+
+.conversation-title {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* User info section */
+.user-info {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    margin-top: auto;
+    border-top: 1px solid #eee;
+}
+
+.username {
+    margin-left: 0.5rem;
+    font-weight: 500;
+}
+
+.logout-btn {
+    margin-left: auto;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #888;
+}
+
+.logout-btn:hover {
+    color: var(--text-color);
+}
+
 /* Update main content margin */
 .main-content {
     transition: margin-left 0.3s ease;
@@ -85,16 +156,39 @@
     margin-left: 60px;
 }
 
+/* Floating menu toggle for mobile */
+.floating-menu-toggle {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 99;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
 @media (max-width: 768px) {
     .sidebar {
         transform: translateX(-100%);
     }
-    
+
     .sidebar.active {
         transform: translateX(0);
     }
 
     .main-content {
         margin-left: 0;
+    }
+
+    .floating-menu-toggle {
+        display: flex;
     }
 }
